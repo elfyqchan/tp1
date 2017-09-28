@@ -18,23 +18,59 @@ public class Panier {
     
     public Panier(int max){
         maximum = max;
+        oranges = new ArrayList<Orange>();
         
     }
     
     public boolean estPlein(){
-        return true;
+        boolean res = false;
+                
+        if(oranges.size() == maximum)
+            res = true;
+        
+        return res;
     }
     
     public boolean estVide(){
-        return false;
+        return oranges.isEmpty();
     }
     
     @Override
     public String toString(){
-        String s = null;
+        String s = "";
         for(int i = 0; i < oranges.size(); i++){
             s = s + "Orange " + i + " = " + oranges.get(i).toString() + "\n";
         }
         return s;
+    }
+    
+    public boolean equals(ArrayList<Orange> o){
+        
+        boolean res = true;
+        
+        for(int i = 0; i< oranges.size(); i++){
+            if(!oranges.get(i).equals(o.get(i))){
+                res = false;     
+            } 
+        }
+        
+        if(oranges.size() != o.size())
+            res = false;
+            
+        return res;
+    }
+    
+    public void ajoute(Orange o){
+        if(!this.estPlein())
+            oranges.add(o);
+        else 
+            System.out.println("Panier plein !");
+    }
+    
+    public void retire(){
+        if(!this.estVide())
+            oranges.remove(oranges.get(oranges.size()-1));
+        else 
+            System.out.println("Panier vide !");
     }
 }

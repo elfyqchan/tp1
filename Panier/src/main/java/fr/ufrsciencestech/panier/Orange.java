@@ -37,4 +37,16 @@ public class Orange {
         return s;
     }
     
+    public boolean equals(Orange o){
+        boolean res = true;
+        if(this.getPrix() != o.getPrix())
+            res = false;
+        
+        if(!this.getOrigine().equals(o.getOrigine()))
+            res = false;
+        
+            
+        return res;
+    }
+    
 }
