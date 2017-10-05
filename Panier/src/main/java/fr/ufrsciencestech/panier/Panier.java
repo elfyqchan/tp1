@@ -73,4 +73,18 @@ public class Panier {
         else 
             System.out.println("Panier vide !");
     }
+    
+    public int getSize(){
+        return oranges.size();
+    }
+    
+    public Orange getOranges(Orange o){
+        for(int i = 0; i < oranges.size(); ++i) {
+            if(this.oranges.get(i) == o) return o;
+        }
+        return null;
+    }
+    
+    public void boycott(String origine){
+    }
 }

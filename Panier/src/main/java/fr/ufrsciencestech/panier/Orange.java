@@ -5,6 +5,8 @@
  */
 package fr.ufrsciencestech.panier;
 
+import static java.lang.Math.abs;
+
 /**
  *
  * @author fb299853
@@ -14,12 +16,7 @@ public class Orange {
     private String origine;
     
     public Orange(double pr, String ori){        
-        if(pr>=0){
-            prix = pr;
-        }else{
-            System.out.println("Prix négatif");
-            prix=-pr;
-        }
+        prix= abs(pr);
         origine = ori;
     }
     
